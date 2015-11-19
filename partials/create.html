@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <form name='addVote'>
+      <div class="form-group">
+        <label for="creator">Creator</label>
+        <input type="text" id="creator" name="creator" class="form-input" ng-model="vote.creator" required>
+        <small class='required' ng-show="addVote.creator.$pristine">* required</small>
+      </div>
+      <div class="form-group">
+        <label for="password">Access code (optional)</label>
+        <input type="text" id="password" name="password" class="form-input" ng-model="vote.code">
+      </div>
+      <div class="form-group">
+        <label for="topic">Quesiton</label>
+        <input type="text" id="topic" name="topic" class="form-input" ng-model="vote.topic" required>
+        <small class='required' ng-show="addVote.topic.$pristine">* required</small>
+      </div>
+      <div class="form-group">
+        <label for="anonymous" data-toggle="tooltip" data-placement="right" title="Voters names will not appear on results" class="checkbox">Anonymous?</label>
+        <input type="checkbox" id="anonymous" name="anonymous" class="checkbox" ng-model="vote.anonymous">
+      </div>
+      <div class="form-group" ng-repeat="option in (optionLoader = (options | limitTo:optionLimit))">
+        <label for='{{option.for}}'>{{option.label}}</label>
+        <input type="text" id="{{option.id}}" name="{{option.id}}" class="form-input" ng-model="vote[option.id]" required>
+        <small class='required' ng-show="addVote.{{option.id}}.$pristine">* required</small>
+      </div>
+      <div class="more-options">
+        <a href="#" ng-click="optionLimit = optionLimit + 1" class="button-link" ng-hide="optionLimit == 5">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+           <span>Add more options</span>
+        </a> 
+      </div>
+      <input type="submit" class="btn btn-default custom-button" value="Create Vote" ng-click="newVote()"  ng-disabled="addVote.$invalid">
+      </div>
+    </form>
+  </div>
+</div>

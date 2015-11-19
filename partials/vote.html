@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name form" name="name" class="form-input" ng-model='name' ng-disabled="anonymous" placeholder='{{anonymous ? "Anonymous" : ""}}'>
+    </div>
+    <h2> Topic {{topic}}</h2>
+    <div class="well" ng-repeat="option in options"
+           ng-class="{'selected': $index == selectedIndex}"
+           ng-click="optionClicked($index)">
+      <p>{{option.choice}}</p>
+    </div>
+    <button type="button" class="btn btn-default" ng-click='submitVote()' ng-disabled='selectedIndex == undefined'>Cast Vote</button>
+  </div>
+</div>

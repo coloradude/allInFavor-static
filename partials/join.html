@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <form name='join'>
+      <div class="form-group">
+        <label for="voteid">Vote ID</label>
+        <input type="number" id="voteid" name="voteid" class="form-input" ng-model="id" required>
+        <small class='required' ng-show="join.voteid.$pristine">* required</small>
+      </div>
+      <div class="form-group">
+        <label for="code">Code to join (if applicable)</label>
+        <input type="text" id="code form" name="code" class="form-input" ng-model='code'>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-default" value="Join Vote" ng-click="joinVote()"  ng-disabled="join.$invalid">
+      </div>
+    </form>
+  </div>
+</div>

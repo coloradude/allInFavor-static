@@ -1,0 +1,60 @@
+.button {
+  border: 2px solid #00BC8C;
+  width: 300px;
+  height: 100px;
+  margin-top: 50px;
+  text-align: center;
+  display: block;
+}
+
+.button-link {
+  text-decoration: none;
+  color: white;
+}
+
+.button-link:hover {
+  text-decoration: none;
+}
+
+.form-input {
+  border: 2px solid #00BC8C;
+  background-color: #404040;
+  height: 50px;
+  width: 100%;
+  color: white;
+  display: block;
+}
+
+.more-options {
+  margin-bottom: 15px;
+}
+
+.checkbox {
+  display: inline;
+}
+
+.well {
+  cursor: pointer;
+}
+
+.selected.well {
+  background: #00BC8C;
+}
+
+.chart-header {
+  color: #999999;
+  padding-bottom: 10%;
+}
+
+.scroll {
+  height: 300px;
+  overflow: scroll;
+}
+
+.required {
+  color: #00BC8C;
+}
+
+.float-right {
+  float: right;
+}
